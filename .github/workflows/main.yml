@@ -12,7 +12,7 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    uses: PonSwaetha/reusable@main
+    uses: PonSwaetha/reusable/.github/workflows/main.yml@main
 
  
 
