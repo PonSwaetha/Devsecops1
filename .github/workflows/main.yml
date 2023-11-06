@@ -1,0 +1,22 @@
+name: Build
+# testing sample DevOps with Git workflow
+on:
+  push:
+    branches:
+      - main  # Modify this to match your repository's main branch
+  pull_request:
+    branches: [ "main" ]    
+
+ 
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+
+ 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+ 
