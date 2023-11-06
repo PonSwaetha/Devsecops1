@@ -12,12 +12,14 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    uses: PonSwaetha/reusable/.github/workflows/main.yml@main
-
- 
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Scanning
+      uses: PonSwaetha/reusable/.github/workflows/main.yml@main
+
+ 
+
+    
 
  
