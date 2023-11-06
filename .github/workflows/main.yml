@@ -10,8 +10,7 @@ on:
  
 
 jobs:
-  scan:
-    runs-on: ubuntu-latest
+  call-workflow:
     uses: PonSwaetha/reusable/.github/workflows/main.yml@main
 
  
