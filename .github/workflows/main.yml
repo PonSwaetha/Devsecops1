@@ -10,8 +10,24 @@ on:
  
 
 jobs:
-  call-workflow:
-    uses: PonSwaetha/reusable/.github/workflows/main.yml@main
+  DotNet_MSBuild:
+    runs-on: windows-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1  
+
+      - name: Restore NuGet packages
+        run: dotnet restore ${{inputs.file_path}}
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+       
+      - name: Build app for release
+        run: msbuild ${{inputs.file_path}} -t:rebuild -verbosity:diag -property:Configuration=Release -t:rebuild -verbosity:diag -property:Configuration=Release
+  #call-workflow:
+  #uses: PonSwaetha/reusable/.github/workflows/main.yml@main
 
  
 
