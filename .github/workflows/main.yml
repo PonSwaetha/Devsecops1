@@ -10,8 +10,9 @@ on:
  
 
 jobs:
-  gitleaks:
+  scan:
     runs-on: ubuntu-latest
+    uses: PonSwaetha/reusable@main
 
  
 
